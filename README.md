@@ -35,6 +35,10 @@ The first command vendors the 400 public ARC-AGI-1 training tasks into `data/arc
 
 The families in `brevis/families.py` produce original tasks in the ARC format, covering grid ops, row ops and a little number theory. `scripts/gen_tasks.py` samples each family's parameters once into `data/generated/manifest.json` and then renders one JSON file per task from a seed. A leaderboard run renders the same manifest with a private seed. The transformation behind each task id stays fixed while the pairs change, so a solution that hardcodes the public outputs fails the hidden ones.
 
+## Model evaluation
+
+`scripts/eval_model.py` drives any model behind a shell command that reads a prompt on stdin and prints one completion. It samples each task k times, keeps the shortest passing program and writes the winners plus `results.json` under a run directory. `scripts/claude_cmd.py` is the reference wrapper for the Claude API and needs the `anthropic` package plus credentials in the environment. A llama.cpp invocation slots into the same interface. `scripts/leaderboard.py` renders every `runs/*/results.json` as a markdown table.
+
 ## Roadmap
 
 1. Harness and the human par line

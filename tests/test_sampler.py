@@ -65,6 +65,16 @@ def test_best_of_k_rejects_garbage():
         assert not os.path.exists(out)
 
 
+def test_keep_writes_attempts():
+    with tempfile.TemporaryDirectory() as d:
+        stub = write_stub(d, STUB_OK)
+        out = os.path.join(d, "win.py")
+        keep = os.path.join(d, "atts")
+        result = sampler.best_of_k([sys.executable, stub], IDENTITY, 2, out, keep_dir=keep)
+        assert result["solved"]
+        assert sorted(os.listdir(keep)) == ["identity-1.txt", "identity-2.txt"]
+
+
 def test_best_of_k_keeps_shortest():
     with tempfile.TemporaryDirectory() as d:
         stub = write_stub(d, STUB_ALT)
@@ -78,5 +88,6 @@ if __name__ == "__main__":
     test_prompt_shows_train_only()
     test_best_of_k_solves()
     test_best_of_k_rejects_garbage()
+    test_keep_writes_attempts()
     test_best_of_k_keeps_shortest()
     print("sampler pass")

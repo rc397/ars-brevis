@@ -17,6 +17,7 @@ def main():
     ap.add_argument("--k", type=int, default=4)
     ap.add_argument("--timeout", type=float, default=5.0)
     ap.add_argument("--cmd-timeout", type=float, default=120.0)
+    ap.add_argument("--keep", action="store_true")
     args = ap.parse_args()
     sol_dir = os.path.join(args.out, "solutions")
     os.makedirs(sol_dir, exist_ok=True)
@@ -26,6 +27,7 @@ def main():
         result = sampler.best_of_k(
             args.cmd, task_path, args.k, os.path.join(sol_dir, tid + ".py"),
             cmd_timeout=args.cmd_timeout, timeout=args.timeout,
+            keep_dir=os.path.join(args.out, "attempts") if args.keep else None,
         )
         result["task"] = tid
         rows.append(result)

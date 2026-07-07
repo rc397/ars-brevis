@@ -54,16 +54,21 @@ def run_model(cmd, prompt, timeout=120.0):
     return proc.stdout
 
 
-def best_of_k(cmd, task_path, k, out_path, cmd_timeout=120.0, timeout=5.0):
+def best_of_k(cmd, task_path, k, out_path, cmd_timeout=120.0, timeout=5.0, keep_dir=None):
     with open(task_path, encoding="utf-8") as f:
         task = json.load(f)
+    tid = os.path.splitext(os.path.basename(task_path))[0]
     prompt = build_prompt(task)
     best = None
     passes = 0
-    for _ in range(k):
+    for i in range(k):
         text = run_model(cmd, prompt, timeout=cmd_timeout)
         if not text:
             continue
+        if keep_dir:
+            os.makedirs(keep_dir, exist_ok=True)
+            with open(os.path.join(keep_dir, f"{tid}-{i + 1}.txt"), "w", encoding="utf-8", newline="\n") as f:
+                f.write(text)
         code = extract(text).encode()
         if not code:
             continue

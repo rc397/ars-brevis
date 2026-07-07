@@ -8,7 +8,7 @@ In 1308 Ramon Llull published Ars Brevis, the golfed edition of his own Ars Magn
 
 A solution is a single Python file that defines a function `p` mapping an input grid, a list of lists of ints, to the output grid. A solution passes a task when `p` reproduces every train and test pair exactly. The score of a passing solution is the byte count of the file. Lower is better.
 
-Solutions run in an isolated subprocess with a per-task timeout. The subprocess runs Python in isolated mode, so the standard library is the whole toolbox. The harness is not a security boundary, so run untrusted submissions in a container.
+Solutions run in an isolated subprocess with a per-task timeout. The subprocess runs Python in isolated mode, so the standard library is the whole toolbox. The harness is not a security boundary, so run untrusted submissions in a container. SUBMITTING.md walks through the format and the local checks.
 
 ## Quickstart
 

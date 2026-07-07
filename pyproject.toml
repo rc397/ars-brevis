@@ -6,8 +6,12 @@ build-backend = "setuptools.build_meta"
 name = "brevis"
 version = "0.0.1"
 description = "y long when short?"
+readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
+
+[project.urls]
+Homepage = "https://github.com/rc397/ars-brevis"
 
 [project.scripts]
 brevis = "brevis.cli:main"

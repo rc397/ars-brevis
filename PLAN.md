@@ -5,7 +5,7 @@
 - [x] Create the repo and the MIT license under Ryan Chen
 - [x] Fix the scoring rules. One Python file per task defining `p`, exact match on all pairs, score is file bytes.
 - [x] Vendor the 400 ARC-AGI-1 training tasks from fchollet/ARC-AGI with their Apache 2.0 license
-- [ ] Import the 2025 comp solution archive into `gold/`
+- [x] Import the 2025 comp solution archive into `gold/`
 - [ ] Claim PyPI `brevis`, a HuggingFace org and arsbrevis.dev
 
 ## Phase 1, harness and the human par line
@@ -15,7 +15,7 @@
 - [x] Eval CLI with a fixture smoke test, identity at 12 bytes
 - [x] Generated task families with property-based tests, covering string ops, grid ops and number theory
 - [x] Hidden-test guard so hardcoded outputs cannot pass
-- [ ] Human par run over the gold solutions
+- [x] Human par run over the gold solutions
 
 The phase is done when the harness scores an arbitrary solutions directory reproducibly and the par line is recorded.
 

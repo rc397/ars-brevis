@@ -1,0 +1,1 @@
+p=lambda g:[[5*(len(set(r))<2)]*len(r)for r in g]

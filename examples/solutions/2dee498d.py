@@ -1,0 +1,1 @@
+p=lambda g:[r[:len(r)//3]for r in g]

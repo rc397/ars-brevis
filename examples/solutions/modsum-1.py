@@ -1,0 +1,1 @@
+p=lambda g:[[sum(map(sum,g))%10]]

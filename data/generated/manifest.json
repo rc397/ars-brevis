@@ -1,0 +1,218 @@
+{
+  "tasks": {
+    "mirror-1": {
+      "family": "mirror",
+      "params": {
+        "axis": "h"
+      }
+    },
+    "mirror-2": {
+      "family": "mirror",
+      "params": {
+        "axis": "v"
+      }
+    },
+    "rot-1": {
+      "family": "rot",
+      "params": {
+        "k": 1
+      }
+    },
+    "rot-2": {
+      "family": "rot",
+      "params": {
+        "k": 2
+      }
+    },
+    "rot-3": {
+      "family": "rot",
+      "params": {
+        "k": 3
+      }
+    },
+    "transpose-1": {
+      "family": "transpose",
+      "params": {}
+    },
+    "scale-1": {
+      "family": "scale",
+      "params": {
+        "k": 2
+      }
+    },
+    "scale-2": {
+      "family": "scale",
+      "params": {
+        "k": 3
+      }
+    },
+    "tile-1": {
+      "family": "tile",
+      "params": {
+        "ty": 2,
+        "tx": 1
+      }
+    },
+    "tile-2": {
+      "family": "tile",
+      "params": {
+        "ty": 1,
+        "tx": 2
+      }
+    },
+    "tile-3": {
+      "family": "tile",
+      "params": {
+        "ty": 2,
+        "tx": 2
+      }
+    },
+    "recolor-1": {
+      "family": "recolor",
+      "params": {
+        "map": [
+          0,
+          8,
+          7,
+          5,
+          9,
+          2,
+          3,
+          1,
+          6,
+          4
+        ]
+      }
+    },
+    "recolor-2": {
+      "family": "recolor",
+      "params": {
+        "map": [
+          0,
+          3,
+          4,
+          7,
+          2,
+          6,
+          9,
+          8,
+          1,
+          5
+        ]
+      }
+    },
+    "recolor-3": {
+      "family": "recolor",
+      "params": {
+        "map": [
+          0,
+          8,
+          2,
+          6,
+          3,
+          9,
+          4,
+          7,
+          1,
+          5
+        ]
+      }
+    },
+    "gravity-1": {
+      "family": "gravity",
+      "params": {
+        "d": "down"
+      }
+    },
+    "gravity-2": {
+      "family": "gravity",
+      "params": {
+        "d": "right"
+      }
+    },
+    "border-1": {
+      "family": "border",
+      "params": {
+        "c": 3
+      }
+    },
+    "border-2": {
+      "family": "border",
+      "params": {
+        "c": 9
+      }
+    },
+    "crop-1": {
+      "family": "crop",
+      "params": {}
+    },
+    "count-1": {
+      "family": "count",
+      "params": {}
+    },
+    "modsum-1": {
+      "family": "modsum",
+      "params": {}
+    },
+    "cycle-1": {
+      "family": "cycle",
+      "params": {
+        "k": 1
+      }
+    },
+    "cycle-2": {
+      "family": "cycle",
+      "params": {
+        "k": 2
+      }
+    },
+    "sortrow-1": {
+      "family": "sortrow",
+      "params": {
+        "order": "asc"
+      }
+    },
+    "sortrow-2": {
+      "family": "sortrow",
+      "params": {
+        "order": "desc"
+      }
+    },
+    "dedupe-1": {
+      "family": "dedupe",
+      "params": {}
+    },
+    "inc-1": {
+      "family": "inc",
+      "params": {}
+    },
+    "parity-1": {
+      "family": "parity",
+      "params": {
+        "a": 1,
+        "b": 8
+      }
+    },
+    "parity-2": {
+      "family": "parity",
+      "params": {
+        "a": 8,
+        "b": 1
+      }
+    },
+    "prime-1": {
+      "family": "prime",
+      "params": {
+        "a": 2,
+        "b": 1
+      }
+    },
+    "prime-2": {
+      "family": "prime",
+      "params": {
+        "a": 8,
+        "b": 5
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+examples/solutions/** -text
+gold/** -text
+data/** -text
+tests/fixtures/** -text

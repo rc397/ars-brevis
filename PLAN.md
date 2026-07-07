@@ -13,8 +13,8 @@
 - [x] Sandbox runner with a timeout and print capture
 - [x] Byte scorer over train and test pairs
 - [x] Eval CLI with a fixture smoke test, identity at 12 bytes
-- [ ] Generated task families with property-based tests, covering string ops, grid ops and number theory
-- [ ] Hidden-test guard so hardcoded outputs cannot pass
+- [x] Generated task families with property-based tests, covering string ops, grid ops and number theory
+- [x] Hidden-test guard so hardcoded outputs cannot pass
 - [ ] Human par run over the gold solutions
 
 The phase is done when the harness scores an arbitrary solutions directory reproducibly and the par line is recorded.
@@ -46,7 +46,7 @@ The phase is done when Brevis-4B beats every open model on the leaderboard.
 
 - [ ] The model on HuggingFace with a full model card, Apache 2.0
 - [ ] Public submission instructions so others can enter the leaderboard
-- [ ] The `brevis file.py` CLI
+- [x] The `brevis file.py` CLI
 - [ ] Writeup 2
 - [ ] Cross-post and claim the project on the personal site under Ryan's name
 

@@ -8,26 +8,32 @@ In 1308 Ramon Llull published Ars Brevis, the golfed edition of his own Ars Magn
 
 A solution is a single Python file that defines a function `p` mapping an input grid, a list of lists of ints, to the output grid. A solution passes a task when `p` reproduces every train and test pair exactly. The score of a passing solution is the byte count of the file. Lower is better.
 
-Solutions run in an isolated subprocess with a per-task timeout. The harness is not a security boundary, so run untrusted submissions in a container.
+Solutions run in an isolated subprocess with a per-task timeout. The subprocess runs Python in isolated mode, so the standard library is the whole toolbox. The harness is not a security boundary, so run untrusted submissions in a container.
 
 ## Quickstart
 
 ```
 python scripts/fetch_arc.py
-python -m brevis.eval --tasks tests/fixtures/tasks --solutions examples/solutions
+python scripts/gen_tasks.py
+python -m brevis.eval --tasks data/arc/training --solutions examples/solutions
+python -m brevis examples/solutions/identity.py --task tests/fixtures/tasks/identity.json
 ```
 
-The first command vendors the 400 public ARC-AGI-1 training tasks into `data/arc/training`. The second runs the fixture smoke test end to end.
+The first command vendors the 400 public ARC-AGI-1 training tasks into `data/arc/training`. The second renders the generated tasks from the public seed. The third scores the example solutions against the training tasks. The fourth scores a single file. The task flag is optional when the filename matches a task id under the data directories.
 
 ## Layout
 
 | Path | Contents |
 | --- | --- |
-| `brevis/` | the harness, with sandbox, scorer, eval and cli |
+| `brevis/` | the harness, with sandbox, scorer, eval, cli and task generators |
 | `data/arc/` | ARC-AGI tasks, Apache 2.0, pulled from fchollet/ARC-AGI |
 | `data/generated/` | original task families, CC BY 4.0 |
 | `examples/solutions/` | sample solutions |
 | `gold/` | private reference solutions, never committed |
+
+## Generated tasks
+
+The families in `brevis/families.py` produce original tasks in the ARC format, covering grid ops, row ops and a little number theory. `scripts/gen_tasks.py` samples each family's parameters once into `data/generated/manifest.json` and then renders one JSON file per task from a seed. A leaderboard run renders the same manifest with a private seed. The transformation behind each task id stays fixed while the pairs change, so a solution that hardcodes the public outputs fails the hidden ones.
 
 ## Roadmap
 

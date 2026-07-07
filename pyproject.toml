@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brevis"
+version = "0.0.1"
+description = "y long when short?"
+requires-python = ">=3.10"
+license = "MIT"
+
+[project.scripts]
+brevis = "brevis.cli:main"
+
+[tool.setuptools]
+packages = ["brevis"]

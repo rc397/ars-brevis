@@ -32,7 +32,7 @@ The phase is done when the leaderboard is live with the human par and five or si
 
 ## Phase 3, train the golfer
 
-- [ ] Long-to-short pairs distilled from Ryan's own golf transforms
+- [x] Long-to-short pairs distilled from Ryan's own golf transforms
 - [ ] Expert iteration. Sample hot via llama.cpp, verify in the sandbox, keep the shortest passing, LoRA SFT on the winners, repeat.
 - [x] Benchmark decode speed before any long sampling run
 - [ ] Run two to four rounds tracking solve rate and mean bytes per round

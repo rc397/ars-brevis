@@ -22,7 +22,7 @@ The phase is done when the harness scores an arbitrary solutions directory repro
 ## Phase 2, eval the field
 
 - [ ] Fixed prompt template and best-of-k sampling for the API models, GPT, Claude and Gemini
-- [ ] Local models through llama.cpp, Qwen3-4B first
+- [x] Local models through llama.cpp, Qwen3-4B first
 - [ ] Pre-flight the API spend with calcis
 - [ ] Collect solve rate, mean bytes against par and a per-task table
 - [ ] Failure analysis covering byte-blindness and the verbosity prior

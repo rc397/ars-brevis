@@ -28,9 +28,9 @@ def test_table_includes_par_and_sorts():
         )
         assert proc.returncode == 0, proc.stderr
         lines = proc.stdout.strip().splitlines()
-        assert lines[2] == "| human par | 9/10 | 500 |"
-        assert lines[3] == "| modely | 4/10 | 700 |"
-        assert lines[4] == "| modelx | 4/10 | 900 |"
+        assert lines[2] == "| human par | 9/10 | 90% | 500 |"
+        assert lines[3] == "| modely | 4/10 | 40% | 700 |"
+        assert lines[4] == "| modelx | 4/10 | 40% | 900 |"
 
 
 def test_missing_par_is_fine():

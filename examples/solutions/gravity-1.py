@@ -1,0 +1,1 @@
+p=lambda g:[list(r)for r in zip(*[sorted(c,key=bool)for c in zip(*g)])]

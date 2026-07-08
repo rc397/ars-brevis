@@ -1,0 +1,1 @@
+p=lambda g:[[[0,8,2,6,3,9,4,7,1,5][c]for c in r]for r in g]

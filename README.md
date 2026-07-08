@@ -37,7 +37,7 @@ The families in `brevis/families.py` produce original tasks in the ARC format, c
 
 ## Model evaluation
 
-`scripts/eval_model.py` drives any model behind a shell command that reads a prompt on stdin and prints one completion. It samples each task k times, keeps the shortest passing program and writes the winners plus `results.json` under a run directory. `scripts/claude_cmd.py` is the reference wrapper for the Claude API and needs the `anthropic` package plus credentials in the environment. A llama.cpp invocation slots into the same interface. `scripts/leaderboard.py` renders every `runs/*/results.json` as a markdown table.
+`scripts/eval_model.py` drives any model behind a shell command that reads a prompt on stdin and prints one completion. It samples each task k times, keeps the shortest passing program and writes the winners plus `results.json` under a run directory. Runs stream `results.jsonl` as they go and `--resume` skips finished tasks after an interruption. `scripts/claude_cmd.py` is the reference wrapper for the Claude API and needs the `anthropic` package plus credentials in the environment. A llama.cpp invocation slots into the same interface. `scripts/leaderboard.py` renders every `runs/*/results.json` as a markdown table.
 
 ## Roadmap
 

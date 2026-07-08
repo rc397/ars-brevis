@@ -1,1 +1,1 @@
-p=lambda g:[sorted(r,key=lambda c:(c<1,-c))for r in g]
+p=lambda g:[sorted(r)[::-1]for r in g]

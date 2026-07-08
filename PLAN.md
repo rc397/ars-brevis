@@ -34,7 +34,7 @@ The phase is done when the leaderboard is live with the human par and five or si
 
 - [ ] Long-to-short pairs distilled from Ryan's own golf transforms
 - [ ] Expert iteration. Sample hot via llama.cpp, verify in the sandbox, keep the shortest passing, LoRA SFT on the winners, repeat.
-- [ ] Benchmark decode speed before any long sampling run
+- [x] Benchmark decode speed before any long sampling run
 - [ ] Run two to four rounds tracking solve rate and mean bytes per round
 - [ ] Reward-hacking audit by reading the shortest solutions and checking hidden-test pass rates
 - [ ] Ablation notes as work proceeds, base against long-to-short against expert iteration

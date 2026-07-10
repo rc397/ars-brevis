@@ -8,13 +8,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True)
     ap.add_argument("--url", default="http://localhost:11434")
-    ap.add_argument("--num-predict", type=int, default=12000)
+    ap.add_argument("--num-predict", type=int, default=2000)
+    ap.add_argument("--think", action="store_true")
     args = ap.parse_args()
     prompt = sys.stdin.read()
     body = json.dumps({
         "model": args.model,
         "prompt": prompt,
         "stream": False,
+        "think": args.think,
         "options": {"num_predict": args.num_predict},
     }).encode()
     req = urllib.request.Request(

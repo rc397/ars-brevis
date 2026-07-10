@@ -1,5 +1,6 @@
 import json
 import os
+import shlex
 import subprocess
 import tempfile
 
@@ -36,6 +37,8 @@ def extract(text):
 
 
 def run_model(cmd, prompt, timeout=120.0):
+    if isinstance(cmd, str) and os.name != "nt":
+        cmd = shlex.split(cmd)
     try:
         proc = subprocess.run(
             cmd,
@@ -45,7 +48,6 @@ def run_model(cmd, prompt, timeout=120.0):
             encoding="utf-8",
             errors="replace",
             timeout=timeout,
-            shell=isinstance(cmd, str),
         )
     except subprocess.TimeoutExpired:
         return None
@@ -63,12 +65,14 @@ def best_of_k(cmd, task_path, k, out_path, cmd_timeout=120.0, timeout=5.0, keep_
     passes = 0
     for i in range(k):
         text = run_model(cmd, prompt, timeout=cmd_timeout)
-        if not text:
+        if text is None:
             continue
         if keep_dir:
             os.makedirs(keep_dir, exist_ok=True)
             with open(os.path.join(keep_dir, f"{tid}-{i + 1}.txt"), "w", encoding="utf-8", newline="\n") as f:
                 f.write(text)
+        if not text:
+            continue
         code = extract(text).encode()
         if not code:
             continue

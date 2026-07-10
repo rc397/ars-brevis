@@ -65,6 +65,15 @@ def test_best_of_k_rejects_garbage():
         assert not os.path.exists(out)
 
 
+def test_string_cmd_spawns_without_shell():
+    with tempfile.TemporaryDirectory() as d:
+        stub = write_stub(d, STUB_OK)
+        out = os.path.join(d, "win.py")
+        cmd = f'"{sys.executable}" "{stub}"'
+        result = sampler.best_of_k(cmd, IDENTITY, 1, out)
+        assert result["solved"] and result["bytes"] == 12
+
+
 def test_keep_writes_attempts():
     with tempfile.TemporaryDirectory() as d:
         stub = write_stub(d, STUB_OK)
@@ -88,6 +97,7 @@ if __name__ == "__main__":
     test_prompt_shows_train_only()
     test_best_of_k_solves()
     test_best_of_k_rejects_garbage()
+    test_string_cmd_spawns_without_shell()
     test_keep_writes_attempts()
     test_best_of_k_keeps_shortest()
     print("sampler pass")

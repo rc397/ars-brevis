@@ -1,0 +1,1 @@
+p=lambda g:(lambda R,C:[r[C[0]:C[-1]+1]for r in g[R[0]:R[-1]+1]])([i for i,r in enumerate(g)if any(r)],[j for j in range(len(g[0]))if any(r[j]for r in g)])

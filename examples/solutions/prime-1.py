@@ -1,0 +1,1 @@
+p=lambda g:[[(2 if c in(2,3,5,7)else 1)if c else 0 for c in r]for r in g]

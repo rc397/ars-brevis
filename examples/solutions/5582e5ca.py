@@ -1,0 +1,1 @@
+p=lambda g:[[max(sum(g,[]),key=sum(g,[]).count)]*len(g[0])for _ in g]

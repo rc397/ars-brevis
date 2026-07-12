@@ -1,0 +1,1 @@
+p=lambda g:[[max((c for r in g for c in r if c),key=[c for r in g for c in r].count)]]

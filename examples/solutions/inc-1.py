@@ -1,0 +1,1 @@
+p=lambda g:[[c%9+1 if c else 0 for c in r]for r in g]

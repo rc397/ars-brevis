@@ -26,7 +26,7 @@ def run(tasks_dir, solutions_dir, timeout=5.0, as_json=False):
     }
     if as_json:
         print(json.dumps({"rows": rows, "summary": summary}))
-        return summary
+        return {"rows": rows, "summary": summary}
     for r in rows:
         status = "pass" if r["passed"] else "fail"
         print(f"{r['task']:<24} {status:<5} {r['bytes']}")
@@ -34,7 +34,7 @@ def run(tasks_dir, solutions_dir, timeout=5.0, as_json=False):
         f"solved {summary['solved']}/{summary['attempted']} attempted, "
         f"{summary['tasks']} tasks, {summary['bytes']} bytes"
     )
-    return summary
+    return {"rows": rows, "summary": summary}
 
 
 def main():

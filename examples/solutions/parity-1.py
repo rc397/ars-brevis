@@ -1,0 +1,1 @@
+p=lambda g:[[(8 if c%2 else 1)if c else 0 for c in r]for r in g]

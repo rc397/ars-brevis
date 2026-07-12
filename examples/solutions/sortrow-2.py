@@ -1,0 +1,1 @@
+p=lambda g:[sorted(r)[::-1]for r in g]

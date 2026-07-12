@@ -25,7 +25,7 @@ The phase is done when the harness scores an arbitrary solutions directory repro
 - [x] Local models through llama.cpp, Qwen3-4B first
 - [ ] Pre-flight the API spend with calcis
 - [ ] Collect solve rate, mean bytes against par and a per-task table
-- [ ] Failure analysis covering byte-blindness and the verbosity prior
+- [x] Failure analysis covering byte-blindness and the verbosity prior
 - [ ] Writeup 1 and the public leaderboard page
 
 The phase is done when the leaderboard is live with the human par and five or six models.
@@ -36,7 +36,7 @@ The phase is done when the leaderboard is live with the human par and five or si
 - [ ] Expert iteration. Sample hot via llama.cpp, verify in the sandbox, keep the shortest passing, LoRA SFT on the winners, repeat.
 - [x] Benchmark decode speed before any long sampling run
 - [ ] Run two to four rounds tracking solve rate and mean bytes per round
-- [ ] Reward-hacking audit by reading the shortest solutions and checking hidden-test pass rates
+- [x] Reward-hacking audit by reading the shortest solutions and checking hidden-test pass rates
 - [ ] Ablation notes as work proceeds, base against long-to-short against expert iteration
 - [ ] GRPO only if expert iteration plateaus
 
